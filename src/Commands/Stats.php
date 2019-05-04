@@ -29,6 +29,8 @@ class Stats
         $output->section('Numbers');
 
         $output->table(['Metric', 'Value', 'Info'], [
+            ["Usage percent", "$usage%", "Approximate percentage of usage."],
+            new TableSeparator(),
             ["CMD flush", $stats->get('cmd_flush'), "Number of 'flush_all' commands (avoid flush in production)."],
             ["CMD get", $stats->get('cmd_get'), "Number of 'get' commands received since server startup."],
             ["CMD set", $stats->get('cmd_set'), "Number of 'set' commands serviced since startup."],
